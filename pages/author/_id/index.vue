@@ -3,10 +3,10 @@
     <div>
         <!-- id {{ $route.params.user_id }}
          qui è dove recupero il paramentro id che poi catturo con la chiamata asyncdata,
-         in questo caso recupero ll user_id e poi stampo i suoi dati da un'altra api-->
-        <div class="container mx-auto flex justify-center">
-            <AuthorCard :author_name="currentAuth.author_name"
-                        :activity_description="currentAuth.activity_description"/>
+         in questo caso recupero lo user_id e poi stampo i suoi dati da un'altra api-->
+        <div class="box-Author container mx-auto flex justify-center items-center">
+            <AuthorCard :author_name="currentAuthor.author_name"
+                        :activity_description="currentAuthor.activity_description"/>
         </div>
     </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     asyncData(ctx) {
         return axios.get('http://127.0.0.1:8000/api/author/' + ctx.params.id)
             .then((response) => {
-                return {currentAuth: response.data};
+                return {currentAuthor: response.data};
             }).catch(error => console.log(error));
     },
 
@@ -31,5 +31,9 @@ export default {
 </script>
 
 <style scoped>
+
+.box-Author {
+    height: 100vh;
+}
 
 </style>

@@ -22,6 +22,7 @@
 export default {
     name: "AuthorCard",
 
+
     props: {
 
         author_name: {
