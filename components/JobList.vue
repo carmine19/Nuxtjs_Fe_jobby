@@ -87,21 +87,6 @@
                   </tr>
                </tbody>
             </table>
-            <!--   <div class="px-5 bg-white py-5 flex flex-col xs:flex-row items-center xs:justify-between">
-               <div class="flex items-center">
-                   <button type="button" class="w-full p-4 border text-base rounded-l-xl text-gray-600 bg-white hover:bg-gray-100">
-                       &lt;
-                   </button>
-
-                   <button type="button" class="w-full px-4 py-2 border-t border-b text-base text-indigo-500 bg-white hover:bg-gray-100 ">
-
-                   </button>
-
-                   <a href="" type="button" class="w-full p-4 border-t border-b border-r text-base  rounded-r-xl text-gray-600 bg-white hover:bg-gray-100">
-                       >
-                   </a>
-               </div>
-               </div> -->
          </div>
       </div>
    </div>
@@ -118,7 +103,7 @@ export default {
 
     data() {
         return {
-            jobList: [],
+            jobList: [], page: '',
         }
     },
     methods: {
@@ -129,6 +114,7 @@ export default {
                     this.jobList = response.data
                 }).catch(error => console.log(error));
         },
+
     },
 
     created() {
